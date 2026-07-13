@@ -1,0 +1,208 @@
+.team{
+    background:#FDFDFD;
+    padding:100px;
+}
+
+.team-container{
+    max-width:1240px;
+    margin:auto;
+}
+
+/* ================= Header ================= */
+
+.team-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:60px;
+    gap:20px;
+}
+
+.team-header span{
+    color:#4A9018;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.team-header h2{
+    font-size:48px;
+    line-height:56px;
+    color:#101828;
+    margin-top:12px;
+}
+
+.view-all{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#4A9018;
+    font-weight:600;
+    transition:.3s;
+}
+
+.view-all:hover{
+    gap:14px;
+}
+
+/* ================= Layout ================= */
+
+.team-grid{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+}
+
+/* ================= Cards ================= */
+
+.team-card{
+    width:130px;
+    height:500px;
+
+    position:relative;
+    overflow:hidden;
+
+    border-radius:40px;
+
+    background:#F4F4F4;
+
+    flex-shrink:0;
+
+    transition:.35s ease;
+}
+
+.ceo-card{
+    width:400px;
+}
+
+.team-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* ================= Images ================= */
+
+.team-image{
+    width:100%;
+    height:100%;
+    display:block;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.team-card:hover .team-image{
+    transform:scale(1.05);
+}
+
+/* Different image alignment */
+
+.left{
+    object-position:left center;
+}
+
+.center{
+    object-position:center;
+}
+
+.right{
+    object-position:right center;
+}
+
+/* ================= Overlay ================= */
+
+.team-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:24px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.05)
+    );
+}
+
+.team-overlay h3{
+    color:#fff;
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.team-overlay p{
+    color:#F2F4F7;
+    font-size:14px;
+}
+
+/* ================= Tablet ================= */
+
+@media(max-width:992px){
+
+.team{
+    padding:80px 40px;
+}
+
+.team-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.ceo-card{
+    width:320px;
+}
+
+.team-card{
+    width:150px;
+    height:420px;
+}
+
+}
+
+/* ================= Mobile ================= */
+
+@media(max-width:768px){
+
+.team{
+    padding:70px 20px;
+}
+
+.team-header h2{
+    font-size:36px;
+    line-height:44px;
+}
+
+.team-grid{
+    justify-content:center;
+}
+
+.ceo-card{
+    width:100%;
+    max-width:360px;
+}
+
+.team-card{
+    width:calc(50% - 10px);
+    max-width:170px;
+    height:360px;
+}
+
+}
+
+@media(max-width:480px){
+
+.team-card,
+.ceo-card{
+    width:100%;
+    max-width:320px;
+    height:360px;
+}
+
+}
