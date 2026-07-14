@@ -27,12 +27,25 @@
   color: #667085;
 }
 
-/* ================= SERVICES GRID ================= */
+/* ================= CAROUSEL ================= */
 
-.services-slider {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.services-slider-wrapper {
+  position: relative;
+}
+
+.services-slider-embla {
+  overflow: hidden;
+}
+
+.services-slider-container {
+  display: flex;
   gap: 24px;
+}
+
+.service-slide {
+  flex: 0 0 auto;
+  width: calc((100% - 48px) / 3); /* 3 visible cards, matching your original grid */
+  min-width: 280px;
 }
 
 /* ================= CARD ================= */
@@ -45,6 +58,7 @@
   padding: 32px;
 
   min-height: 348px;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -115,6 +129,7 @@
 
   border: none;
   background: none;
+  text-decoration: none;
 
   cursor: pointer;
 
@@ -135,6 +150,35 @@
   transform: translateX(5px);
 }
 
+/* ================= NAV ARROWS ================= */
+
+.services-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.services-nav button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #eaecf0;
+  background: #fff;
+  color: #101828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.services-nav button:hover {
+  background: #4a9018;
+  color: #fff;
+  border-color: #4a9018;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
@@ -142,8 +186,8 @@
     padding: 100px 40px;
   }
 
-  .services-slider {
-    grid-template-columns: repeat(2, 1fr);
+  .service-slide {
+    width: calc((100% - 24px) / 2);
   }
 }
 
@@ -161,11 +205,7 @@
     line-height: 28px;
   }
 
-  .services-slider {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    min-height: auto;
+  .service-slide {
+    width: 85%;
   }
 }

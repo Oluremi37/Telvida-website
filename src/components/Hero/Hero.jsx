@@ -3,7 +3,7 @@ import earth from "../../assets/images/earth.png";
 
 const Hero = () => {
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="home">
       <div className="hero-content">
         <h1>
           Empowering Communication.

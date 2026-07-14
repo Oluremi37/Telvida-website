@@ -17,6 +17,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+  position: relative;
 }
 
 .logo {
@@ -92,7 +93,113 @@
   color: #ffffff;
 }
 
-/* Hamburger button - hidden on desktop */
+/* ================= SERVICES MEGA MENU ================= */
+
+
+
+.services-mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0px 18px 20.7px 0px rgba(0, 0, 0, 0.15);
+  padding: 27px 48px;
+  gap: 10px;
+  width: min(1047px, 92vw); /* NEW — shrinks on narrower viewports instead of overflowing */
+  z-index: 10;
+}
+
+.mega-menu-column {
+  flex: 1;
+  min-width: 0; /* allows column to shrink instead of forcing overflow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mega-menu-promo-column {
+  flex: 0.9;
+  min-width: 0;
+}
+
+.mega-menu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin: -8px;
+  transition: background 0.2s ease;
+}
+
+.mega-menu-item:hover {
+  background: #f9fafb;
+}
+
+.mega-menu-number {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #f2f4f7;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mega-menu-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 4px;
+}
+
+.mega-menu-item p {
+  font-size: 12px;
+  color: #667085;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mega-menu-promo-column {
+  flex: 0.9;
+}
+
+.mega-menu-ad {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #101828;
+}
+
+.mega-menu-ad img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.mega-menu-ad h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #101828;
+  margin: 12px 12px 4px;
+}
+
+.mega-menu-ad p {
+  font-size: 11px;
+  color: #98a2b3;
+  line-height: 1.5;
+  margin: 0 12px 12px;
+}
+
+/* ================= HAMBURGER ================= */
+
 .hamburger-btn {
   display: none;
   background: none;
@@ -104,12 +211,12 @@
   flex-shrink: 0;
 }
 
-/* Mobile overlay - hidden by default */
+/* ================= MOBILE OVERLAY / MENU ================= */
+
 .mobile-overlay {
   display: none;
 }
 
-/* Mobile slide-in menu - hidden by default */
 .mobile-menu {
   display: none;
 }
@@ -128,7 +235,6 @@
     display: block;
   }
 
-  /* Overlay */
   .mobile-overlay {
     display: block;
     position: fixed;
@@ -145,7 +251,6 @@
     visibility: visible;
   }
 
-  /* Slide-in panel */
   .mobile-menu {
     display: flex;
     flex-direction: column;
@@ -161,6 +266,7 @@
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1002;
+    overflow-y: auto;
   }
 
   .mobile-menu.open {
@@ -208,5 +314,47 @@
 
   .mobile-quote-btn {
     width: 100%;
+  }
+
+  /* Mobile Services dropdown (accordion style) */
+  .mobile-nav-item-dropdown {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobile-services-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .mobile-services-toggle .dropdown-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-services-toggle .dropdown-icon.rotated {
+    transform: rotate(180deg);
+  }
+
+  .mobile-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+    padding-left: 12px;
+  }
+
+  .mobile-services-list a {
+    font-size: 14px;
+    color: #667085;
+    text-decoration: none;
   }
 }
