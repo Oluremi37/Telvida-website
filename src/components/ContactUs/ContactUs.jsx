@@ -79,7 +79,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4>Email</h4>
-                <p>info@telvida.com</p>
+                <p>info@telvidatechnologies.com</p>
               </div>
             </div>
 

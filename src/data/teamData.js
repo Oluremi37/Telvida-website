@@ -64,7 +64,7 @@ export const teamMembers = [
   {
     id: 3,
     name: "Senator Ugen",
-    role: "Chief Operations Manager",
+    role: "Chief Operations and Project Officer",
     image: senator,
     preview: true,
   },

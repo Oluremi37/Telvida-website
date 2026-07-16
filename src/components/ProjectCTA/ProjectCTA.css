@@ -14,7 +14,6 @@
   gap: 48px;
 }
 
-/* Left side */
 .project-cta-left {
   flex: 1;
   color: #fff;
@@ -61,7 +60,6 @@
   margin: 0 0 4px;
 }
 
-/* Right side - form card */
 .project-cta-right {
   flex: 1;
   display: flex;
@@ -124,6 +122,85 @@
 
 .submit-btn:hover {
   background: #128a3e;
+}
+
+/* ================= THANK YOU CARD ================= */
+
+.thank-you-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.thank-you-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e9f9ee;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  animation: pop-in 0.4s ease;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.thank-you-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #101828;
+  margin: 0 0 8px;
+}
+
+.thank-you-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #344054;
+  margin: 0 0 16px;
+}
+
+.thank-you-body {
+  font-size: 13px;
+  color: #667085;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.reset-btn {
+  background: #fff;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.reset-btn:hover {
+  background: #f2f4f7;
 }
 
 @media (max-width: 900px) {

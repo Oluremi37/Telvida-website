@@ -38,13 +38,13 @@ export default function PortfolioCard({ project }) {
             onClick={() => setActiveImage(index + 1)}
           />
         ))}
-      </div>
+      </div> 
 
       {/* CONTENT */}
 
       <div className="portfolio-content">
         <div className="portfolio-text">
-          <h3>{project.title}</h3>
+          {/* <h3>{project.title}</h3> */}
 
           <p>{project.text}</p>
         </div>
