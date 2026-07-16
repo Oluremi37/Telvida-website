@@ -28,10 +28,17 @@
   margin-bottom: 72px;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+.portfolio-embla{
+overflow:hidden;
+}
+
+.portfolio-track{
+display:flex;
+gap:24px;
+}
+
+.portfolio-slide{
+flex:0 0 calc(25% - 18px);
 }
 
 /* Card */
@@ -155,8 +162,8 @@
 
 /* Responsive */
 @media (max-width: 1200px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
+    .portfolio-slide{
+    flex: 0 0 calc(33.333% - 16px);
   }
 }
 
@@ -168,8 +175,8 @@
     font-size: 40px;
     line-height: 48px;
   }
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+   .portfolio-slide{
+    flex:0 0 calc(50% - 12px);
   }
 }
 
@@ -182,7 +189,7 @@
     line-height: 42px;
     margin-bottom: 50px;
   }
-  .portfolio-grid {
-    grid-template-columns: 1fr;
+    .portfolio-slide{
+    flex:0 0 100%;
   }
 }

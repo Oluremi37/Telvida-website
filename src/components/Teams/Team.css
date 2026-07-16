@@ -1,208 +1,401 @@
-.team{
-    background:#FDFDFD;
-    padding:100px;
+/* ===========================
+TEAM SECTION
+=========================== */
+
+.team {
+  padding: 110px 0;
+  background: #fff;
 }
 
-.team-container{
-    max-width:1240px;
-    margin:auto;
+.team-container {
+  width: min(92%, 1300px);
+  margin: auto;
 }
 
-/* ================= Header ================= */
+/* ===========================
+HEADER
+=========================== */
 
-.team-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:60px;
-    gap:20px;
+.team-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
-.team-header span{
-    color:#4A9018;
+.team-small-title {
+  display: inline-block;
+  color: #4A9018;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.team-top h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #101828;
+  margin-bottom: 18px;
+}
+
+.team-top p {
+  max-width: 620px;
+  color: #667085;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.view-team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 54px;
+
+  background: #4A9018;
+  color: #fff;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: .35s;
+}
+
+.view-team:hover {
+  background: #2F6F11;
+}
+
+/* ===========================
+SLIDER
+=========================== */
+
+.team-slider {
+  display: flex;
+  gap: 18px;
+  height: 560px;
+}
+
+/* ===========================
+CARD
+=========================== */
+
+.team-item {
+  position: relative;
+
+  flex: 1;
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition:
+    flex .75s cubic-bezier(.22,.61,.36,1),
+    transform .45s;
+
+  min-width: 110px;
+}
+
+.team-item.active {
+  flex: 3.8;
+}
+
+.team-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform .8s;
+}
+
+.team-item.active img {
+  transform: scale(1.05);
+}
+
+/* ===========================
+OVERLAY
+=========================== */
+
+.team-content {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 30px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.78),
+    rgba(0,0,0,.12),
+    transparent
+  );
+}
+
+.team-content div {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: .45s;
+}
+
+.team-item.active .team-content div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-content h3 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.team-content span {
+  color: #ECECEC;
+  font-size: 15px;
+}
+.executive-reverse .executive-image{
+    justify-self:end;
+}
+
+.executive-reverse .executive-content{
+    justify-self:start;
+}
+/* ==========================================
+   LARGE LAPTOPS
+========================================== */
+
+@media (max-width: 1200px) {
+
+  .team-slider {
+    height: 500px;
+  }
+
+  .team-top h2 {
+    font-size: 42px;
+  }
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+  .team {
+    padding: 90px 0;
+  }
+
+  .team-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .team-top h2 {
+    font-size: 38px;
+  }
+
+  .team-top p {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .view-team {
+    width: 160px;
+    height: 50px;
+  }
+
+  .team-slider {
+    height: 420px;
+    gap: 14px;
+  }
+
+  .team-item.active {
+    flex: 3;
+  }
+
+  .team-content {
+    padding: 22px;
+  }
+
+  .team-content h3 {
+    font-size: 22px;
+  }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+  .team{
+
+    padding:80px 0;
+
+  }
+
+  .team-top{
+
+    margin-bottom:40px;
+
+  }
+
+  .team-top h2{
+
+    font-size:32px;
+
+  }
+
+  .team-top p{
+
     font-size:15px;
-    font-weight:600;
-    letter-spacing:1px;
-}
 
-.team-header h2{
-    font-size:48px;
-    line-height:56px;
-    color:#101828;
-    margin-top:12px;
-}
+  }
 
-.view-all{
-    display:flex;
-    align-items:center;
+  .team-slider{
+
+    height:320px;
+
     gap:10px;
-    text-decoration:none;
-    color:#4A9018;
-    font-weight:600;
-    transition:.3s;
-}
 
-.view-all:hover{
-    gap:14px;
-}
+  }
 
-/* ================= Layout ================= */
+  .team-item{
 
-.team-grid{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    align-items:flex-start;
-}
+    min-width:45px;
 
-/* ================= Cards ================= */
+  }
 
-.team-card{
-    width:130px;
-    height:500px;
+  .team-item.active{
 
-    position:relative;
-    overflow:hidden;
+    flex:4;
 
-    border-radius:40px;
+  }
 
-    background:#F4F4F4;
+  .team-content{
 
-    flex-shrink:0;
+    padding:18px;
 
-    transition:.35s ease;
-}
+  }
 
-.ceo-card{
-    width:400px;
-}
+  .team-content h3{
 
-.team-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-}
-
-/* ================= Images ================= */
-
-.team-image{
-    width:100%;
-    height:100%;
-    display:block;
-
-    object-fit:cover;
-
-    transition:.4s;
-}
-
-.team-card:hover .team-image{
-    transform:scale(1.05);
-}
-
-/* Different image alignment */
-
-.left{
-    object-position:left center;
-}
-
-.center{
-    object-position:center;
-}
-
-.right{
-    object-position:right center;
-}
-
-/* ================= Overlay ================= */
-
-.team-overlay{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-
-    padding:24px;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.05)
-    );
-}
-
-.team-overlay h3{
-    color:#fff;
     font-size:18px;
-    margin-bottom:6px;
+
+    margin-bottom:5px;
+
+  }
+
+  .team-content span{
+
+    font-size:13px;
+
+  }
+
 }
 
-.team-overlay p{
-    color:#F2F4F7;
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+  .team{
+
+    padding:70px 0;
+
+  }
+
+  .team-container{
+
+    width:94%;
+
+  }
+
+  .team-top h2{
+
+    font-size:28px;
+
+  }
+
+  .team-top p{
+
     font-size:14px;
-}
 
-/* ================= Tablet ================= */
+    line-height:1.6;
 
-@media(max-width:992px){
+  }
 
-.team{
-    padding:80px 40px;
-}
+  .team-slider{
 
-.team-header{
-    flex-direction:column;
-    align-items:flex-start;
-}
+    height:280px;
 
-.ceo-card{
-    width:320px;
-}
+    gap:8px;
 
-.team-card{
-    width:150px;
-    height:420px;
-}
+  }
 
-}
+  .team-item{
 
-/* ================= Mobile ================= */
+    border-radius:16px;
 
-@media(max-width:768px){
+    min-width:36px;
 
-.team{
-    padding:70px 20px;
-}
+  }
 
-.team-header h2{
-    font-size:36px;
-    line-height:44px;
-}
+  .team-item.active{
 
-.team-grid{
-    justify-content:center;
-}
+    flex:5;
 
-.ceo-card{
-    width:100%;
-    max-width:360px;
-}
+  }
 
-.team-card{
-    width:calc(50% - 10px);
-    max-width:170px;
-    height:360px;
-}
+  .team-content{
+
+    padding:14px;
+
+  }
+
+  .team-content h3{
+
+    font-size:16px;
+
+  }
+
+  .team-content span{
+
+    font-size:12px;
+
+  }
 
 }
 
-@media(max-width:480px){
+/* ==========================================
+   SMOOTH ANIMATION
+========================================== */
 
-.team-card,
-.ceo-card{
-    width:100%;
-    max-width:320px;
-    height:360px;
+.team-item,
+.team-item img,
+.team-content,
+.team-content div{
+
+    will-change:transform,opacity,flex;
+
 }
+
+.team-item{
+
+    backface-visibility:hidden;
+
+    transform:translateZ(0);
 
 }

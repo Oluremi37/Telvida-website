@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import ProductsPage from "../pages/ProductsPage";
 import TeamPage from "../pages/TeamPage";
 import ProductDetail from "../components/ProductDetail/ProductDetail";
+import ServiceDetail from "../components/ServiceDetail/ServiceDetail";
 
 const AppRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes = () => {
       <Route path="/team" element={<TeamPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/products/:slug" element={<ProductDetail />} />
+      <Route path="/services/:slug" element={<ServiceDetail />} />
     </Routes>
   );
 };
