@@ -103,7 +103,12 @@ export default function ContactUs() {
               >
                 Get Directions
               </a>
-              <a href="#contact-sales" className="btn-contact-sales">
+              <a
+                href="https://wa.me/2348081250063?text=Hi%2C%20I%27d%20like%20to%20speak%20with%20your%20sales%20team"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-contact-sales"
+              >
                 Contact Sales
               </a>
             </div>

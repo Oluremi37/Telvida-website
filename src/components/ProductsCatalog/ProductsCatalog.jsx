@@ -111,7 +111,13 @@ export default function ProductsCatalog() {
                     <Link to={`/products/${product.slug}`} className="btn-view">
                       View Details
                     </Link>
-                    <button className="btn-quote">Request Quote</button>
+                    <Link
+                      to="/request-quote"
+                      state={{ itemName: product.name, itemType: "product" }}
+                      className="btn-quote"
+                    >
+                      Request Quote
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,8 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import ScrollReveal from "../ScrollReveal/ScrollReveal";
 import "./Services.css";
 
 import videoIcon from "../../assets/icons/video.png";
@@ -66,29 +68,50 @@ const services = [
 ];
 
 const Services = () => {
+  const autoScroll = useMemo(
+    () => AutoScroll({ speed: 0.6, stopOnInteraction: false }),
+    [],
+  );
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { align: "start", loop: true, dragFree: true },
-    [AutoScroll({ speed: 0.6, stopOnInteraction: false })],
+    [autoScroll],
   );
 
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
+  const pauseAutoScroll = () => {
+    const autoScroll = emblaApi?.plugins()?.autoScroll;
+    if (autoScroll) autoScroll.stop();
+  };
+
+  const resumeAutoScroll = () => {
+    const autoScroll = emblaApi?.plugins()?.autoScroll;
+    if (autoScroll) autoScroll.play();
+  };
+
   return (
     <section className="services" id="services">
       <div className="services-container">
-        <div className="services-header">
-          <h2>Our Services</h2>
+        <ScrollReveal>
+          <div className="services-header">
+            <h2>Our Services</h2>
 
-          <p>
-            Telvida is a pioneering technology firm dedicated to delivering
-            innovative solutions that enhance business efficiency and drive
-            growth. Our expertise spans various sectors, providing tailored
-            services that meet the unique needs of our clients.
-          </p>
-        </div>
+            <p>
+              Telvida is a pioneering technology firm dedicated to delivering
+              innovative solutions that enhance business efficiency and drive
+              growth. Our expertise spans various sectors, providing tailored
+              services that meet the unique needs of our clients.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="services-slider-wrapper">
+        <div
+          className="services-slider-wrapper"
+          onMouseEnter={pauseAutoScroll}
+          onMouseLeave={resumeAutoScroll}
+        >
           <div className="services-slider-embla" ref={emblaRef}>
             <div className="services-slider-container">
               {services.map((service, index) => (

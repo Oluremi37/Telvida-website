@@ -1,39 +1,69 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/images/brand-logo.png";
 import services from "../../data/services";
-import ServicesMegaMenu from "../ServicesMegaMenu/ServicesMegaMenu"
+import ServicesMegaMenu from "../ServicesMegaMenu/ServicesMegaMenu";
 import { FaChevronDown } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const timeoutRef = useRef(null);
+
   const navigate = useNavigate();
   const location = useLocation();
+
+  const openServicesMenu = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    setIsServicesOpen(true);
+  };
+
+  const closeServicesMenu = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 180);
+  };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
     setIsMobileServicesOpen(false);
     setIsServicesOpen(false);
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
   };
 
   const scrollToSection = (sectionId) => {
     const el = document.getElementById(sectionId);
+
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
+
     closeMenu();
 
     if (location.pathname === "/") {
       scrollToSection(sectionId);
     } else {
-      navigate("/", { state: { scrollTo: sectionId } });
+      navigate("/", {
+        state: {
+          scrollTo: sectionId,
+        },
+      });
     }
   };
 
@@ -42,6 +72,7 @@ const Navbar = () => {
       const timer = setTimeout(() => {
         scrollToSection(location.state.scrollTo);
       }, 100);
+
       return () => clearTimeout(timer);
     }
   }, [location]);
@@ -71,20 +102,23 @@ const Navbar = () => {
               </a>
             </li>
 
-            <li
-              className="nav-item nav-item-dropdown"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
-              <a
-                href="#services"
-                onClick={(e) => handleNavClick(e, "services")}
+            <li className="nav-item nav-item-dropdown">
+              <div
+                className="services-dropdown-wrapper"
+                onMouseEnter={openServicesMenu}
+                onMouseLeave={closeServicesMenu}
               >
-                Services
-              </a>
-              <FaChevronDown className="dropdown-icon" />
+                <a
+                  href="#services"
+                  onClick={(e) => handleNavClick(e, "services")}
+                >
+                  Services
+                </a>
 
-              {isServicesOpen && <ServicesMegaMenu onLinkClick={closeMenu} />}
+                <FaChevronDown className="dropdown-icon" />
+
+                {isServicesOpen && <ServicesMegaMenu onLinkClick={closeMenu} />}
+              </div>
             </li>
 
             <li className="nav-item">
@@ -104,13 +138,9 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <a
-          href="#contact"
-          className="quote-btn"
-          onClick={(e) => handleNavClick(e, "contact")}
-        >
+        <Link to="/request-quote" className="quote-btn">
           Request a Quote
-        </a>
+        </Link>
 
         <button
           className="hamburger-btn"
@@ -135,6 +165,7 @@ const Navbar = () => {
           >
             <img src={logo} alt="Telvida Technologies" />
           </a>
+
           <button
             className="close-btn"
             onClick={closeMenu}

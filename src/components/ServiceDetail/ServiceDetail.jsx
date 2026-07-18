@@ -1,4 +1,6 @@
 import { useParams, Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import services from "../../data/services";
 import ProductsCatalog from "../ProductsCatalog/ProductsCatalog";
 import ProjectCTA from "../ProjectCTA/ProjectCTA";
@@ -11,22 +13,32 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="service-not-found">
-        <h2>Service not found</h2>
-        <Link to="/">Back to Home</Link>
-      </div>
+      <>
+        <Navbar />
+        <div className="service-not-found">
+          <h2>Service not found</h2>
+          <Link to="/">Back to Home</Link>
+        </div>
+        <Footer />
+      </>
     );
   }
 
   return (
     <>
+      <Navbar />
+
       <section className="service-hero">
         <div className="service-hero-content">
           <h1>{service.name}</h1>
           <p>{service.heroDescription}</p>
-          <a href="#contact" className="service-hero-btn">
+          <Link
+            to="/request-quote"
+            state={{ itemName: service.name, itemType: "service" }}
+            className="service-hero-btn"
+          >
             Request Quote
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -58,6 +70,8 @@ export default function ServiceDetail() {
       <ProductsCatalog category={service.productCategory} />
 
       <ProjectCTA />
+
+      <Footer />
     </>
   );
 }

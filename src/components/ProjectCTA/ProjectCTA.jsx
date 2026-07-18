@@ -34,7 +34,7 @@ export default function ProjectCTA() {
   };
 
   return (
-    <section className="project-cta-section">
+    <section className="project-cta-section" id="schedule-demo">
       <div className="project-cta-container">
         <div className="project-cta-left">
           <h2>Talk to us about your project</h2>
@@ -123,8 +123,8 @@ export default function ProjectCTA() {
                 <option value="In-Person Meeting">In-Person Meeting</option>
                 <option value="Phone Call">Phone Call</option>
                 <option value="Video Call">Virtual Meeting</option>
-                  <option value="Video Call">Product Demonstration</option>
-                  <option value="Site Visit">Site Visit</option>
+                <option value="Video Call">Product Demonstration</option>
+                <option value="Site Visit">Site Visit</option>
               </select>
 
               <button type="submit" className="submit-btn">
