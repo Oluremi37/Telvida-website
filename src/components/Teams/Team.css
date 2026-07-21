@@ -47,29 +47,32 @@ HEADER
   font-size: 17px;
 }
 
-.view-team {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.view-team{
+    display:flex;
+    align-items:center;
+    gap:10px;
 
-  width: 170px;
-  height: 54px;
+    color:#4A9018;
+    font-size:16px;
+    font-weight:600;
 
-  background: #4A9018;
-  color: #fff;
+    text-decoration:none;
 
-  border-radius: 999px;
-
-  text-decoration: none;
-  font-weight: 600;
-
-  transition: .35s;
+    transition:.3s;
 }
 
-.view-team:hover {
-  background: #2F6F11;
+.view-team::after{
+    content:"→";
+    transition:.3s;
 }
 
+.view-team:hover{
+    color:#2F6F11;
+}
+
+.view-team:hover::after{
+    transform:translateX(6px);
+}
 /* ===========================
 SLIDER
 =========================== */

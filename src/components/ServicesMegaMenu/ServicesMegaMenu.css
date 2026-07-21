@@ -1,6 +1,4 @@
-/* ===========================
-   MEGA MENU
-=========================== */
+/* MEGA MENU */
 
 .services-mega-menu {
   position: absolute;
@@ -22,9 +20,7 @@
   z-index: 999;
 }
 
-/* ===========================
-INNER LAYOUT
-=========================== */
+/* INNER LAYOUT */
 
 .mega-menu-content{
     width:951px;
@@ -39,9 +35,7 @@ INNER LAYOUT
     align-items:start;
 }
 
-/* ===========================
-LEFT & MIDDLE COLUMNS
-=========================== */
+/* LEFT & MIDDLE COLUMNS */
 
 .mega-column{
     display:flex;
@@ -52,9 +46,9 @@ LEFT & MIDDLE COLUMNS
     width:286px;
 }
 
-/* ===========================
+/* 
 RIGHT COLUMN
-=========================== */
+ */
 
 .mega-preview-column{
 
@@ -67,9 +61,7 @@ RIGHT COLUMN
     gap:22px;
 }
 
-/* ===========================
-MENU ITEM
-=========================== */
+/* MENU ITEM */
 
 .mega-item{
 
@@ -100,9 +92,7 @@ MENU ITEM
   background: #F2F8EF;
 }
 
-/* ===========================
-NUMBER
-=========================== */
+/* NUMBER */
 
 .mega-number {
   width: 32px;
@@ -131,9 +121,7 @@ NUMBER
   color: #fff;
 }
 
-/* ===========================
-TEXT
-=========================== */
+/* TEXT */
 
 .mega-text{
 
@@ -168,9 +156,7 @@ TEXT
     word-break:break-word;
 }
 
-/* ===========================
-PREVIEW
-=========================== */
+/* PREVIEW*/
 
 .mega-preview{
     display:flex;
@@ -182,7 +168,7 @@ PREVIEW
     overflow:hidden;
 }
 
-.mega-preview image{
+.mega-preview-image{
 
     width:299px;
 
@@ -219,9 +205,7 @@ PREVIEW
     overflow-wrap:break-word;
 }
 
-/* ===========================
-ANIMATION
-=========================== */
+/* ANIMATION */
 
 .mega-preview img,
 .mega-preview h4,

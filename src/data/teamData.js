@@ -72,7 +72,7 @@ export const teamMembers = [
   {
     id: 4,
     name: "Chidozie Anozike",
-    role: "Technical Team Lead",
+    role: "Technical Manager",
     image: chidozie,
     preview: true,
   },
@@ -80,7 +80,7 @@ export const teamMembers = [
   {
     id: 5,
     name: "Razak Balogun",
-    role: "Account Officer",
+    role: "Chief Financial Officer",
     image: victor,
     preview: true,
   },

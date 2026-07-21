@@ -12,6 +12,7 @@ import ibm from "../../assets/images/ibm.png";
 import dell from "../../assets/images/dell.png";
 import samsung from "../../assets/images/samsung.png";
 
+
 const aboutData = [
   {
     title: "Mission",
