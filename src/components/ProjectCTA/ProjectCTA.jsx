@@ -53,7 +53,7 @@ export default function ProjectCTA() {
             <p className="project-cta-contact">
               +234 813 380 9668, 0808 125 0063
             </p>
-            <p className="project-cta-contact">info@ng.telvida.com</p>
+            <p className="project-cta-contact">info@telvidatechnologies.com</p>
           </div>
 
           <div className="project-cta-right">
