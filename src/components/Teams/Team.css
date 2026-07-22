@@ -5,6 +5,7 @@ TEAM SECTION
 .team {
   padding: 110px 0;
   background: #fff;
+  scroll-margin-top: 100px;
 }
 
 .team-container {
@@ -22,6 +23,11 @@ HEADER
   align-items: flex-end;
   gap: 40px;
   margin-bottom: 60px;
+}
+
+.team-top-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .team-small-title {
@@ -47,35 +53,37 @@ HEADER
   font-size: 17px;
 }
 
-.view-team{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.view-team {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-    color:#4A9018;
-    font-size:16px;
-    font-weight:600;
+  background: #4a9018;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
 
-    text-decoration:none;
+  padding: 14px 28px;
+  border-radius: 999px;
 
-    transition:.3s;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: 0.3s;
 }
 
-.view-team::after{
-    content:"→";
-    transition:.3s;
+.view-team::after {
+  content: none;
 }
 
-.view-team:hover{
-    color:#2F6F11;
+.view-team:hover {
+  background: #3a7513;
 }
 
-.view-team:hover::after{
-    transform:translateX(6px);
-}
-/* ===========================
+/* 
 SLIDER
-=========================== */
+ */
 
 .team-slider {
   display: flex;
@@ -83,9 +91,9 @@ SLIDER
   height: 560px;
 }
 
-/* ===========================
+/* 
 CARD
-=========================== */
+ */
 
 .team-item {
   position: relative;
@@ -113,6 +121,7 @@ CARD
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
 
   transition: transform .8s;
 }

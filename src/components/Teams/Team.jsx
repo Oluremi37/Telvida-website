@@ -29,25 +29,30 @@ export default function Team() {
   }, [isPaused, previewMembers.length]);
 
   return (
-    <section className="team">
+    <section className="team" id="team">
       <div className="team-container">
         <div className="team-top">
           <ScrollReveal>
-            <span className="team-small-title">OUR PROFESSIONALS</span>
+            <div className="team-top-text">
+              <span className="team-small-title">OUR PROFESSIONALS</span>
 
-            <h2>Meet Our Team</h2>
+              <h2>Meet Our Team</h2>
 
-            <p>
-              Meet the passionate professionals driving innovation,
-              collaboration and excellence across our organization.
-            </p>
+              <p>
+                Meet the passionate professionals driving innovation,
+                collaboration and excellence across our organization.
+              </p>
+            </div>
+          </ScrollReveal>
 
+          <ScrollReveal delay={0.1}>
             <Link to="/team" className="view-team">
               View Team
             </Link>
           </ScrollReveal>
         </div>
-        <ScrollReveal delay={0.15}>
+
+        <ScrollReveal delay={0.2}>
           <div
             className="team-slider"
             onMouseLeave={() => {
